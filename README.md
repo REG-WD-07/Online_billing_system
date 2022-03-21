@@ -1,0 +1,4 @@
+# Online_billing_system
+
+Budget buddy is simply an online bill management system and functional web-based application that facilitates users to manage their bills and payments through a centralized system. Furthermore, user can add services bills, calculate expenses, and manage payments without any limitations. Today we live in heavy competitive business world with everything depend on benefits of information technology. But most people still couldn’t endure with competitive lifestyle, and they fall into very frustrative mind while engaging with current society. As a developers of Budget buddy online bill management system, we think this system will give those people a little help to release their pressure and hardness of life and we work together to improve the effectiveness of our system. 
+
