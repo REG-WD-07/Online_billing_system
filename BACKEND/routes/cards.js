@@ -67,7 +67,7 @@ router.route("/update/:id").put(async (req, res) => {
     })
 })
 
-//Delete card
+//Delete payment method
 router.route("/delete/:id").delete(async (req,res) => {
     let CardId = req.params.id;
 
