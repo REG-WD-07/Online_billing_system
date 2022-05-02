@@ -2,7 +2,7 @@ const router = require("express").Router();
 let Card = require("../models/Card");
 
 
-// Insert
+// Insert card details
 router.route("/insert").post((req,res)=>{
 
 
@@ -34,7 +34,7 @@ router.route("/insert").post((req,res)=>{
 
 })
 
-//View
+//View card details
 router.route("/").get((req,res)=>{
 
     Card.find().then((cards)=>{
@@ -45,7 +45,7 @@ router.route("/").get((req,res)=>{
 
 })
 
-//Update
+//Update card details
 router.route("/update/:id").put(async (req, res) => {
     let CardId = req.params.id;
     const {cardtype, cardholdername, cardNumber, expirationdate, securitycode} = req.body;
@@ -67,7 +67,7 @@ router.route("/update/:id").put(async (req, res) => {
     })
 })
 
-//Delete
+//Delete card
 router.route("/delete/:id").delete(async (req,res) => {
     let CardId = req.params.id;
 
