@@ -62,7 +62,7 @@ export default function PayBill () {
       
           <label for="formGroupExampleInput" class="form-label">Bill type</label>
             <select required class="form-select" onChange={(e)=> {setBillType(e.target.value);}} aria-label="Default select example">
-              <option selected value="0">Select bill type</option>
+              <option selected value="">Select bill type</option>
               <option value="Electricity">Electricity</option>
               <option value="Water">Water</option>
               <option value="Communication">Communication</option>
@@ -73,7 +73,7 @@ export default function PayBill () {
 
           <label for="formGroupExampleInput" class="form-label">Profile</label>
             <select required class="form-select" onChange={(e)=> {setProfile(e.target.value);}} aria-label="Default select example">
-              <option selected value={"0"}>Select profile</option>
+              <option selected value="">Select profile</option>
               <option value="Home">Home</option>
               <option value="Office">Office</option>
             </select>
@@ -88,7 +88,7 @@ export default function PayBill () {
 
           <label for="formGroupExampleInput" class="form-label">Payment method</label>
             <select required class="form-select" onChange={(e)=> {setPaymentMethod(e.target.value);}} aria-label="Default select example">
-              <option selected value={"0"}>Select payment method</option>
+              <option selected value="">Select payment method</option>
               <option  value={"123456"}>123456  Visa</option>
               <option  value={"456789"}>456789  Master</option>
             </select>

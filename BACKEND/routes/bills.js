@@ -11,20 +11,15 @@ router.route("/add").post((req,res)=>{
     const accountNumber = req.body.accountNumber;
     const cardNumber = req.body.cardNumber;
     const amount = req.body.amount;
-    //date
-    //const dateTime = $currentDate();
-
+    
     const newBill = new Bill({
-        
 
         billType,
         profile,
         accountNumber,
         cardNumber,
         amount,
-        //date
-        //dateTime
-
+        
     })
 
     newBill.save().then(()=>{

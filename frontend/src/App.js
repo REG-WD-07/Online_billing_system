@@ -14,8 +14,11 @@ function App() {
     <div>
       <Header/>
       <Route path='/add' exact component={PayBill} />
-      <Route path='/card' exact component={AddCard} />
       <Route path='/view' exact component={PaymentHistory} />
+      <Route path='/card' exact component={AddCard} />
+      <Route path='/update' exact component={AddCard} />
+    
+      
       <Route path='/get' exact component={EditCard} />
     </div>
     </Router>

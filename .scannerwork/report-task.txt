@@ -1,0 +1,6 @@
+projectKey=BillPaymentManagement
+serverUrl=http://localhost:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://localhost:9000/dashboard?id=BillPaymentManagement
+ceTaskId=AYCKHrrpO1ngs8btvsGs
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYCKHrrpO1ngs8btvsGs
