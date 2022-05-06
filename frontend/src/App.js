@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AddCard from './components/AddCard';
 import EditCard from './components/EditCard';
 import PaymentHistory from './components/PaymentHistory';
+import SelectCard from './components/SelectCard';
+
 
 
 
@@ -15,11 +17,10 @@ function App() {
       <Header/>
       <Route path='/add' exact component={PayBill} />
       <Route path='/view' exact component={PaymentHistory} />
-      <Route path='/card' exact component={AddCard} />
-      <Route path='/update' exact component={AddCard} />
-    
+      <Route path='/insert' exact component={AddCard} />
+      <Route path='/selectcard' exact component={SelectCard} />
+      <Route path='/update' exact component={EditCard} />
       
-      <Route path='/get' exact component={EditCard} />
     </div>
     </Router>
    

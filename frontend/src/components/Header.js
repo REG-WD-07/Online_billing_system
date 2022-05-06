@@ -1,8 +1,11 @@
 import React from "react";
+import './Header.css'
 
 
 
 function Header() {
+
+    
 
     return (
 
@@ -14,9 +17,13 @@ function Header() {
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Budget Buddy</a>
     <div class="d-grid gap-2 d-md-block">
-      <button class="btn btn-primary " type="button">Log in</button>
-      <button class="btn btn-primary" type="button">Sign up</button>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary me-md-2" type="button">Log in</button>
+        <button class="btn btn-primary" type="button">Sign up</button>
+      </div>   
 </div>
+
+
     <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,8 +33,6 @@ function Header() {
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div>
-
-        
         
       </div>
       <div class="offcanvas-body">
@@ -63,9 +68,9 @@ function Header() {
               Payment Method
             </a>
             <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-              <li><a class="dropdown-item" href="card">Add payment method</a></li>
-              <li><a class="dropdown-item" href="#">Edit payment method</a></li>
-              <li><a class="dropdown-item" href="#">Remove payment method</a></li>
+              <li><a class="dropdown-item" href="insert">Add payment method</a></li>
+              <li><a class="dropdown-item" href="selectcard">Edit payment method</a></li>
+              <li><a class="dropdown-item" href="selectcard">Remove payment method</a></li>
             </ul>
           </li>
 
@@ -100,8 +105,13 @@ function Header() {
         
       </div>
     </div>
+
+    
   </div>
+  
 </nav>
+
+
 
 </div>
 

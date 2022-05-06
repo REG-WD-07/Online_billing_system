@@ -11,18 +11,6 @@ export default function PayBill () {
     const [paymentMethod, setPaymentMethod] = useState("");
     const [cards, setCards] = useState(null);
 
-    // useEffect(() =>{
-    //   fetch("http://localhost:5000/card/").then(response => {
-    //    return response.json();
-    // }).then(data =>{
-    //   //let cd = Object.keys(data);
-    //   setCards(data);
-
-    // }).catch((err)=>{
-    //     alert(err)
-    // })
-    // });
-
 
     function sendData(e){
         
@@ -54,11 +42,11 @@ export default function PayBill () {
 
   <div class='container mt-5 pt-5'>
 
-    <h3>Pay bills</h3>
+    <h3 style ={ {marginLeft: 400, marginTop: 40}} >Pay Bills</h3>
 
       <div class='container mt-3 pt-3'></div>
       
-        <form onSubmit={sendData}>
+        <form style ={ {marginLeft: 350, marginRight: 350, marginTop: 10 }} onSubmit={sendData}>
       
           <label for="formGroupExampleInput" class="form-label">Bill type</label>
             <select required class="form-select" onChange={(e)=> {setBillType(e.target.value);}} aria-label="Default select example">
@@ -71,7 +59,7 @@ export default function PayBill () {
               <option value="LeasingandFinance">Leasing and Finance</option>
           </select>
 
-          <label for="formGroupExampleInput" class="form-label">Profile</label>
+          <label for="formGroupExampleInput" class="form-label" >Profile</label>
             <select required class="form-select" onChange={(e)=> {setProfile(e.target.value);}} aria-label="Default select example">
               <option selected value="">Select profile</option>
               <option value="Home">Home</option>
@@ -89,13 +77,14 @@ export default function PayBill () {
           <label for="formGroupExampleInput" class="form-label">Payment method</label>
             <select required class="form-select" onChange={(e)=> {setPaymentMethod(e.target.value);}} aria-label="Default select example">
               <option selected value="">Select payment method</option>
-              <option  value={"123456"}>123456  Visa</option>
+              <option  value={"7890239037891278"}>7890239037891278  Visa</option>
               <option  value={"456789"}>456789  Master</option>
             </select>
 
-          <div class='container mt-3 pt-3'></div>
-          <button type="submit" class="btn btn-primary btn-lg" >Pay</button>
-          <button type="button" class="btn btn-secondary btn-lg" onClick={()=>window.location.reload(false)}>Cancel</button>
+          
+          <button type="submit" class="btn btn-primary btn-lg" style ={ {marginRight: 20, marginLeft: 210, marginTop: 60}}>Pay</button>
+          <button type="button" class="btn btn-danger btn-lg" style ={ {marginTop:60 }} onClick={()=>window.location.reload(false)}>Cancel</button>
+          
 
         </form>
 

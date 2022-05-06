@@ -48,13 +48,13 @@ router.route("/").get((req,res)=>{
 //Update card details
 router.route("/update/:id").put(async (req, res) => {
     let CardId = req.params.id;
-    const {cardtype, cardholdername, cardNumber, expirationdate, securitycode} = req.body;
+    const {cardType, cardHolderName, cardNumber, expirationDate, securitycode} = req.body;
 
     const updateCard = {
-        cardtype,
-        cardholdername,
+        cardType,
+        cardHolderName,
         cardNumber,
-        expirationdate,
+        expirationDate,
         securitycode
     }
 
@@ -81,10 +81,12 @@ router.route("/delete/:id").delete(async (req,res) => {
 })
 
 router.route("/get/:id").get(async (req, res) => {
+    
     let CardId = req.params.id;
+    console.log(CardId);
     const card = await Card.findById(CardId)
     .then((card) => {
-        res.status(200).send({status: "Card fetched", card});
+        res.status(200).send(card);
     }).catch((err) => {
         console.log(err.message);
         res.status(500).send({status: "Error with get card", error: err.message});
