@@ -20,10 +20,8 @@ export default function EditCard () {
   
 
   useEffect(() => {
-  
     axios.get(`http://localhost:5000/card/get/${id}`).then((res) => {
-     
-      setCard(res.data)
+    setCard(res.data)
       
 
   }).catch((e) => {
@@ -33,6 +31,7 @@ export default function EditCard () {
 
   //sending collected data to the database
   function sendData(e) {
+    
     e.preventDefault();
 
     const newCard = {
@@ -84,12 +83,12 @@ return (
           <div>
             {Card.cardType=='Mastercard' ? <div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cardType" value="Visa"  onChange={(e) => {updateCard({cardType: e.target.value})}}  />
+            <input class="form-check-input" required type="radio" name="inlineRadioOptions" id="cardType" value="Visa"  onChange={(e) => {updateCard({cardType: e.target.value})}}  />
             <label class="form-check-label" for="inlineRadio1"></label>
             <img src='/images/visa.jpg' width='50'  alt="" />
           </div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cardType" value="Mastercard"  onChange={(e) => {updateCard({cardType: e.target.value})}} checked/>
+            <input class="form-check-input" required type="radio" name="inlineRadioOptions" id="cardType" value="Mastercard"  onChange={(e) => {updateCard({cardType: e.target.value})}} checked/>
             <label class="form-check-label" for="inlineRadio2"></label>
             <img src='/images/mastercard.jpg' width='50' alt=""/>
           </div>
@@ -115,7 +114,7 @@ return (
             
             <div>
               <label for="formGroupExampleInput2" class="form-label">Security code</label>
-              <form className="d-flex">
+              <form className="d-flex" >
                 <input required type="text" class="form-control" id="securitycode" placeholder="CVV" defaultValue={Card.securitycode} onChange={(e) => {updateCard({securitycode: e.target.value})}}/>
                 <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="popover" title="The CVV is a 3- or 4-digit code printed on your credit card." data-bs-content="And here's some amazing content. It's very engaging. Right?">?</button>
               </form>
@@ -123,8 +122,8 @@ return (
             
             
             <div class='container mt-3 pt-3'></div>
-            <button type="submit" class="btn btn-primary btn-lg" style ={ {marginRight: 20, marginLeft: 210, marginTop: 10}}>Update</button>
-            <button type="button" class="btn btn-danger btn-lg" style ={ {marginTop:10 }}  onClick={()=>window.location.reload(false)}>Cancel</button>
+            <button type="submit" class="btn btn-primary btn-lg" style ={{marginRight: 20, marginLeft: 210, marginTop: 10}}>Update</button>
+            <button type="button" class="btn btn-danger btn-lg" style ={{marginTop:10 }}  onClick={()=>window.location.reload(false)}>Cancel</button>
 
 
             </form>

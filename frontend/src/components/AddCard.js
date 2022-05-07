@@ -53,12 +53,12 @@ export default function AddCard () {
 
                     <label for="formGroupExampleInput" class="form-label" style={{marginRight: 50}}>Card type</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Visa" checked={cardType === "Visa"} onChange={radioClick}/>
+                        <input class="form-check-input" required type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Visa" checked={cardType === "Visa"} onChange={radioClick}/>
                         <label class="form-check-label" for="inlineRadio1"></label>
                         <img src='/images/visa.jpg' width='50'  alt="" />
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Mastercard"  checked={cardType === "Mastercard"} onChange={radioClick}/>
+                        <input class="form-check-input" required type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Mastercard"  checked={cardType === "Mastercard"} onChange={radioClick}/>
                         <label class="form-check-label" for="inlineRadio2"></label>
                         <img src='/images/mastercard.jpg' width='50' alt=""/>
                     </div><br></br>

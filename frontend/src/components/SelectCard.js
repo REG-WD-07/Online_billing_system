@@ -12,6 +12,7 @@ export default function SelectCard() {
 
   const [cards, setCards] = useState([]);
 
+  //get all card details
   function getCards() {
     axios
       .get("http://localhost:5000/card")
@@ -29,38 +30,20 @@ export default function SelectCard() {
 
   console.log(cards);
 
-  //delete card button funtion
-  const deleteCard = (id) => {
-    window.confirm("Are you sure you want to delete the card ?")
-    axios
-      .delete(`http://localhost:5000/card/delete/${id}`)
-      .then(() => {
-        alert("Card deleted")
-        
-      })
-      .catch((e) => {
-        alert("error");
-      });
-  };
+  
+ 
+
 
 
    function editCard(id) {
      console.log(id) 
-     
       history.push({pathname:'/update',id})
-
-    //  axios
-    //   .put(`http://localhost:5000/card/update/${id}`)
-    //   .then(() => {
-    //     alert("Card Updated")
-        
-    //   })
-    //   .catch((e) => {
-    //     alert("error");
-    //   });
-   
    }
 
+   function deleteCard(id) {
+    console.log(id) 
+     history.push({pathname:'/delete',id})
+  }
    
 
   return (

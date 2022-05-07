@@ -6,6 +6,9 @@ import AddCard from './components/AddCard';
 import EditCard from './components/EditCard';
 import PaymentHistory from './components/PaymentHistory';
 import SelectCard from './components/SelectCard';
+import DeleteCard from './components/DeleteCard';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 
 
@@ -20,7 +23,9 @@ function App() {
       <Route path='/insert' exact component={AddCard} />
       <Route path='/selectcard' exact component={SelectCard} />
       <Route path='/update' exact component={EditCard} />
-      
+      <Route path='/delete' exact component={DeleteCard} />
+      <Route path='/login' exact component={Login} />
+      <Route path='/signup' exact component={Signup} />
     </div>
     </Router>
    
