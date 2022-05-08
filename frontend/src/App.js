@@ -9,6 +9,7 @@ import SelectCard from './components/SelectCard';
 import DeleteCard from './components/DeleteCard';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Home from './components/Home';
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <Route path='/delete' exact component={DeleteCard} />
       <Route path='/login' exact component={Login} />
       <Route path='/signup' exact component={Signup} />
+      <Route path='/home' exact component={Home} />
     </div>
     </Router>
    

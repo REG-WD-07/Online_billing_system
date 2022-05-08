@@ -72,7 +72,7 @@ export default function PayBill () {
                 <select required class="form-select" onChange={(e)=> {setPaymentMethod(e.target.value);}} aria-label="Default select example">
                   <option selected value="">Select payment method</option>
                   <option  value={"7890239037891278"}>7890239037891278  Visa</option>
-                  <option  value={"456789"}>456789  Master</option>
+                  <option  value={"4532902378921254"}>4532902378921254  Mastercard</option>
                 </select>
              
               <button type="submit" class="btn btn-primary btn-lg" style ={ {marginRight: 20, marginLeft: 210, marginTop: 60}}>Pay</button>
