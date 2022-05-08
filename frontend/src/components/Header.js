@@ -13,12 +13,13 @@ function Header() {
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand mx-4" href="#">
-      <img src="https://bootstrapious.com/i/snippets/sn-nav-logo/logo.png" height="80" width="80" alt="" class="mx-5"></img><h4><b>BUDGET BUDDY</b></h4></a>
+      <img src="https://bootstrapious.com/i/snippets/sn-nav-logo/logo.png" height="50" width="50" alt="" class="mx-5"></img>
+      <h4><b>BUDGET BUDDY</b></h4></a> 
      
  
     <div class="d-grid gap-2 d-md-block">
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<button class="btn btn-primary" type="button" href="login">LOGIN</button>
+<button class="btn btn-primary" type="button" href="login">LOG IN</button>
         <button class="btn btn-primary" type="button" href="signup">SIGN UP</button>
       </div>   
 </div>

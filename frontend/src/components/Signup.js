@@ -3,13 +3,10 @@ import React from 'react'
 export default function Signup() {
     return (
         <div class='container mt-5 pt-5 '>
-            
 
-           
-            
             <div class='container mt-3 pt-3 '>
-            <form id = "frm" style ={ {marginLeft: 350, marginRight: 350, marginTop: 10 }} class="p-3 mb-2 bg-dark text-light">
-            <h1 style ={ {marginLeft: 570, marginTop: 40}} class="text-white">SIGN UP</h1>
+            <form id = "frm" style ={ {marginLeft: 350, marginRight: 350, marginTop: 10 }}>
+            <h1 style ={ {marginLeft: 200, marginTop: 40, marginBottom:40}} >SIGN UP</h1>
             <div class="row g-3 mb-3">
             <div class="col">
                 <label for="exampleInputEmail1" class="form-label">First name</label>

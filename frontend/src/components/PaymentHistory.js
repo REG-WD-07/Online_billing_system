@@ -12,7 +12,9 @@ export default function PaymentHistory() {
   const [search, setsearch] = useState(null);
   const [filtered, setfiltered] = useState([]);
   const history = useHistory();
+  const [searchTerm, setSearchTerm] = useState('')
 
+  //fetching all the bill details from the database
   function getBills() {
     axios
       .get("http://localhost:5000/bill/view")
@@ -29,31 +31,6 @@ export default function PaymentHistory() {
   }, []);
 
   console.log(bills);
-
-  function startSearch(value) {
-    console.log("Search", search);
-    setsearch(value);
-
-    const filteredItems = bills.filter((items) => {
-      // items.billType = search;
-      console.log("filterddd", filtered);
-    });
-    console.log("filterd items", filteredItems);
-    setfiltered(filteredItems);
-    console.log("filterd", filtered);
-  }
-
-  // useEffect(() => {
-  //   setfiltered(
-  //     //filtering the inventory array to only contain objects that match with the seach term and save in the FILTERED useState
-  //     bills.filter(items => {
-  //       console.log("filterddd",filtered);
-  //       return items.billType.toLowerCase().includes(search.toLowerCase())
-  //         || items.accountNumber.toLowerCase().includes(search.toLowerCase())
-  //     })
-  //   )
-  //   console.log("filterd",filtered);
-  // }, [])
 
   //Generate payment history report
   function generatePDF(bills) {
@@ -100,7 +77,7 @@ export default function PaymentHistory() {
 
   return (
     <div className="container mt-5 pt-5">
-      <h3 style={{ marginLeft: 400, marginTop: 40 }}>Payment History</h3>
+      <h3 style={{ marginLeft: 400, marginTop: 80 }}>Payment History</h3>
       <div className="container mt-3">
         <div className="container-fluid">
           <form className="d-flex">
@@ -110,19 +87,15 @@ export default function PaymentHistory() {
               placeholder="Search"
               aria-label="Search"
               style={{ marginLeft: 200, marginTop: 40, marginBottom: 40 }}
-              placeholder="Enter Bill type or Account number Here"
-              onChange={(e) => {
-                setsearch(e.target.value);
+              placeholder="Enter Bill type here"
+              onChange={event => {
+                setSearchTerm(event.target.value)
               }}
             />
             <button
               className="btn btn-outline-secondary"
               type="submit"
-              style={{ marginRight: 200, marginTop: 40, marginBottom: 40 }}
-              placeholder="Enter bill type or account number Here"
-              onChange={(e) => {
-                startSearch(e.target.value);
-              }}
+              style={{ marginRight: 200, marginTop: 40, marginBottom: 40 }}  
             >
               Search
             </button>
@@ -141,8 +114,14 @@ export default function PaymentHistory() {
               <th>Amount</th>
             </tr>
           </thead>
-          <tbody>
-            {bills.map((item) => (
+          <tbody> 
+            {bills.filter((val)=> { //Filter payment history details
+              if (searchTerm == "") {
+                return val
+              } else if (val.billType.toLowerCase().includes(searchTerm.toLowerCase())) {
+                return val
+              }
+            }).map((item) => (
               <tr>
                 <td>{item._id}</td>
                 <td>{item.billType}</td>

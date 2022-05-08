@@ -17,11 +17,13 @@ export default function DeleteCard() {
   const [expirationDate, setExpirationDate] = useState("");
   const [securitycode, setSecurityCode] = useState("");
 
+  //storing the data that fetched from the DB
   const [Card, setCard] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/card/get/${id}`)
+    //fetching card details from DB for the selected card
+    axios.get(`http://localhost:5000/card/get/${id}`)
       .then((res) => {
         setCard(res.data);
       })
@@ -30,36 +32,41 @@ export default function DeleteCard() {
       });
   }, []);
 
-  //delete card button funtion
+  //delete card funtion
   const sendDelete = () => {
-    // if (window.confirm("Are you sure you want to delete the card ?")) {
-    //     axios.delete(`http://localhost:5000/card/delete/${id}`).then(() => {
-    //       alert("Card updated")
-    //       }).catch((e) => {
-    //         alert("error");
-    //       });
-    //   } else {
+    if (window.confirm("Are you sure you want to delete the card ?")) {
+        axios.delete(`http://localhost:5000/card/delete/${id}`)
+        .then(res => {
+          alert("Card deleted")
+          console.log(res);
+          //history.push('/selectcard');
+        })
+          .catch((e) => {
+            alert("error");
+          });
+      } else {
 
-    //     console.log("You canceled!");
-    //   }
+        console.log("You canceled!");
+      }
+    };
 
-    window.confirm("Are you sure you want to delete the card ?")
-    axios
-      .delete(`http://localhost:5000/card/delete/${id}`)
-      .then(() => {
-        alert("Card deleted")
-        
-      })
-      .catch((e) => {
-        alert("error");
-      });
-  };
+  //   window.confirm("Are you sure you want to delete the card ?")
+  //   axios
+  //     .delete(`http://localhost:5000/card/delete/${id}`)
+  //     .then(res => {
+  //       alert("Card deleted")
+  //       console.log(res);
+  //       //history.push('/selectcard');
+  //     })
+  //     .catch((e) => {
+  //       alert("error");
+  //     });
+  // };
 
   return (
-    <div class="container mt-5 pt-5">
-      <h3 style={{ marginLeft: 400, marginTop: 40 }}>Remove Payment Method</h3>
-
-      <div class="container mt-3 pt-3">
+    <div class='container mt-5 pt-5'>
+      <h3  style ={ {marginLeft: 400, marginTop: 80}}>Remove Payment Method</h3>
+      <div class='container mt-3 pt-3'>
         <form
           style={{ marginLeft: 350, marginRight: 350, marginTop: 10 }}
           onSubmit={sendDelete}
