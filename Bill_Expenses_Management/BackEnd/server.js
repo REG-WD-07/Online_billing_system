@@ -26,12 +26,6 @@ mongoose.connection.once('open', () => {
 app.use("/expense", expenseRouter);
 
 
-//date
-/*var dateTime = require('node-datetime');
-var dt = dateTime.create();
-var formatted = dt.format('Y-m-d H:M:S');
-console.log(formatted);*/
-
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
 })
